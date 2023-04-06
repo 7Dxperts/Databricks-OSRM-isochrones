@@ -65,3 +65,46 @@ iso.plot_isolines(figsize = (10, 10))
 iso = il.OsmIsolines('Bozeman High School, Bozeman, Montana, USA',values=[250, 500],sample = 200)
 iso.plot_isolines(plot_nodes=True, plot_source_nodes=True,figsize = (10,10))
 ```
+![](docs/figs/bozeman1.png)
+* The output isolines/isochroones are based on a **concave hull** (rather than convex hull) heuristic by default resulting in a more realistically shaped and accurate isolines/isochroones. These can be tweaked to get even more refined delineation if needed
+
+```python
+iso.change_isolines(knn = 15)
+iso.plot_isolines(plot_nodes=True, plot_source_nodes=True,figsize = (10,10))
+```
+![](docs/figs/bozeman2.png)
+
+(examples for refining boundaries can be found here:
+ https://github.com/mlichter2/isolines_examples/blob/master/examples/03_refining_isolines_concave_boundaries_and_smoothing.ipynb)
+ 
+ * isolines lets you either download a network from **OpenStreetMap (OSM)** or use an edges **geopandas GeoDataFrame**
+or use a **NetworkX graph**
+In the example below, an edges GEoDataFrame from the US Census Tiger roads dataset is used
+
+```python
+import geopandas as gpd
+import pandas as pd
+from shapely.geometry import LineString
+df = gpd.GeoDataFrame.from_file('../data/tl_2019_36047_edges/tl_2019_36047_edges.shp')
+# pre-process: add edges in the opposite direction 
+df2 = df.copy()
+df2['TNIDF'] = df['TNIDT'].copy()
+df2['TNIDT'] = df['TNIDF'].copy()
+# reverse the line geometry coordinate sequence
+df2['geometry'] = df['geometry'].apply(lambda x: LineString(x.coords[::-1]))
+df = pd.concat([df, df2]).reset_index(drop = True)
+tiger = il.GpdIsolines('Prospect Park, Brooklyn, NYC, USA',
+                            edges = df,
+                            network_type = 'walk',
+                            metric = 'time',
+                            values=[3, 6, 8, 16, 20],
+                            edge_idcol = 'TLID', 
+                            fromcol = 'TNIDF',
+                            tocol = 'TNIDT',
+                            sample= 400,
+                            knn = 50
+                                 )
+
+tiger.plot_isolines(figsize = (10, 10))
+```
+![](docs/figs/tiger.png)
