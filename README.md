@@ -52,7 +52,7 @@ amend them and perform EDA use one of the following classes: ```GpdIsolimes, NXI
 iso = il.OsmIsolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time', values=np.arange(2.5, 22.5, 2.5), unit = 'ft', sample = 600)
 iso.plot_isolines(figsize = (10, 10))
 ```
-![](docs/figs/prospect_park.png)
+![](docs/pics/prospect_park.png)
 
 (for basic examples see also https://github.com/mlichter2/isolines_examples/blob/master/examples/01_basic_example.ipynb)
 
