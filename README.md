@@ -44,3 +44,12 @@ df = il.isolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time',values=[3,
 | 0 | POLYGON ((-73.9715 40.6492,... | 3 |
 | 1 | POLYGON ((-73.9708 40.6470,... | 6 |
 | 2 | POLYGON ((-73.9704 40.6448...  | 9 |
+
+
+However, if you which to explore your result with built-in visualization and be able to 
+amend them and perform EDA use one of the following classes: ```GpdIsolimes, NXIsoliner, OsmIsolines```
+```python
+iso = il.OsmIsolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time', values=np.arange(2.5, 22.5, 2.5), unit = 'ft', sample = 600)
+iso.plot_isolines(figsize = (10, 10))
+```
+![](docs/figs/prospect_park.png)
