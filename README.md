@@ -29,30 +29,8 @@ from OSM data **without any data input** or * **use your own data**: your own ne
   * Generation of nodes and edges GeoDataFrames
 
 ## Examples
-A repository with a wide variety of examples can be found here: https://github.com/mlichter2/isolines_examples
-* Create isolines/isochroones for complex geometries (polygons and linestrings) as well as simple point geometries
-If you only want to output a GeoDataFrame of isolines/isochrones 
-use the ```isolines``` function:
-
-```python
-import isolines as il
-df = il.isolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time',values=[3, 6, 9])
 ```
-
-|  | geometry  | time  |
-| ------- | --- | --- |
-| 0 | POLYGON ((-73.9715 40.6492,... | 3 |
-| 1 | POLYGON ((-73.9708 40.6470,... | 6 |
-| 2 | POLYGON ((-73.9704 40.6448...  | 9 |
-
-
-However, if you which to explore your result with built-in visualization and be able to 
-amend them and perform EDA use one of the following classes: ```GpdIsolimes, NXIsoliner, OsmIsolines```
-```python
-iso = il.OsmIsolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time', values=np.arange(2.5, 22.5, 2.5), unit = 'ft', sample = 600)
-iso.plot_isolines(figsize = (10, 10))
-```
-![](docs/pics/prospect_park.png)
+![](docs/pics/Isochrones_London.png)
 
 (for basic examples see also https://github.com/mlichter2/isolines_examples/blob/master/examples/01_basic_example.ipynb)
 
