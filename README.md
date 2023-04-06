@@ -34,3 +34,8 @@ A repository with a wide variety of examples can be found here: https://github.c
 If you only want to output a GeoDataFrame of isolines/isochrones 
 use the ```isolines``` function:
 
+```python
+import isolines as il
+df = il.isolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time',values=[3, 6, 9])
+```
+
