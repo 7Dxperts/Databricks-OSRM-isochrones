@@ -29,9 +29,9 @@ from OSM data **without any data input** or * **use your own data**: your own ne
   * Generation of nodes and edges GeoDataFrames
 
 ## Examples
-```
-![](docs/pics/Isochrones_London.png)
 
+![](docs/pics/Isochrones_London.png)
+```
 (for basic examples see also https://github.com/mlichter2/isolines_examples/blob/master/examples/01_basic_example.ipynb)
 
 * The isolines/isochroones boundaries are not confined to the existing network nodes. The network is amended to  include
