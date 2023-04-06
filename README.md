@@ -19,3 +19,18 @@ from OSM data **without any data input** or * **use your own data**: your own ne
    * Accepts various graph inputs:  the ```GpdIsolimes``` class excepts edges GeoDataFrames and the
     ```NXIsoliner``` class accepts NetworkX graphs as input and the ```OsmIsolines``` class
     allows you tod downloads a street network from OpenStreetMap (OSM)
+    
+     #### Other Features
+  * Easy built-in visualization
+  * Dynamically tweaking isolines/isochroones delineation by re-setting the default
+  knn parameter that controls the concave hull heuristic 
+  * Dynamically adding isolines/isochroones to an existing instance
+  * Extraction of the augmented output graph
+  * Generation of nodes and edges GeoDataFrames
+
+## Examples
+A repository with a wide variety of examples can be found here: https://github.com/mlichter2/isolines_examples
+* Create isolines/isochroones for complex geometries (polygons and linestrings) as well as simple point geometries
+If you only want to output a GeoDataFrame of isolines/isochrones 
+use the ```isolines``` function:
+
