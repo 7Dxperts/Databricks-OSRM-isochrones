@@ -53,3 +53,15 @@ iso = il.OsmIsolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time', value
 iso.plot_isolines(figsize = (10, 10))
 ```
 ![](docs/figs/prospect_park.png)
+
+(for basic examples see also https://github.com/mlichter2/isolines_examples/blob/master/examples/01_basic_example.ipynb)
+
+* The isolines/isochroones boundaries are not confined to the existing network nodes. The network is amended to  include
+ new source and target nodes based on the input geometry and distances/times specified, so that large edges are cut in
+ the respective location of new source/ target nodes to yield a more realistic isolines/isochroones boundary.
+ the built-in visualization can can help explore and refine these boundaries.
+67
+```python
+iso = il.OsmIsolines('Bozeman High School, Bozeman, Montana, USA',values=[250, 500],sample = 200)
+iso.plot_isolines(plot_nodes=True, plot_source_nodes=True,figsize = (10,10))
+```
