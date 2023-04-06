@@ -40,11 +40,7 @@ df = il.isolines('Prospect Park, Brooklyn, NYC, USA', metric = 'time',values=[3,
 ```
 
 |  | geometry  | time  |
-48
 | ------- | --- | --- |
-49
 | 0 | POLYGON ((-73.9715 40.6492,... | 3 |
-50
 | 1 | POLYGON ((-73.9708 40.6470,... | 6 |
-51
 | 2 | POLYGON ((-73.9704 40.6448...  | 9 |
