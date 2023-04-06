@@ -108,3 +108,35 @@ tiger = il.GpdIsolines('Prospect Park, Brooklyn, NYC, USA',
 tiger.plot_isolines(figsize = (10, 10))
 ```
 ![](docs/figs/tiger.png)
+
+(examples for using different data sources:
+ https://github.com/mlichter2/isolines_examples/blob/master/examples/06_using_different_input_sources.ipynb,
+ https://github.com/mlichter2/isolines_examples/blob/master/examples/07_example_using_US_Census_TIGER_dataset.ipynb)
+* Add isolines to an existing instance
+
+```python
+
+from shapely.geometry import Point
+isochrones = il.OsmIsolines(Point(179370.985,664422.488),
+                                 network_type = 'walk',
+                                 values=[500, 1500, 2500, 3500],
+                                 crs = 2039,
+                                 knn = 25)
+isochrones.plot_isolines(figsize = (10, 10))
+```
+![](docs/figs/habima1.png)
+```python
+isochrones.add_isolines([1000, 2000, 3000, 4000])
+isochrones.plot_isolines()
+```
+![](docs/figs/habima2.png)
+(examples: https://github.com/mlichter2/isolines_examples/blob/master/examples/02_adding_isolines_and_isochrones.ipynb)
+
+* Extract nodes and edges GeoDataFrames, NetworkX graphs
+```buildoutcfg
+nodes = isochrones.get_nodes()
+edges = isochrones.get_edges()
+G = isochrones.get_graph()
+```
+
+1. Moreira, Adriano & Santos, Maribel. (2007). Concave hull: A k-nearest neighbours approach for the computation of the region occupied by a set of points.. 61-68. 
