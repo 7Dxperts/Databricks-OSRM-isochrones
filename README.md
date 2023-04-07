@@ -4,8 +4,7 @@
 
 Create Isolines and Isochrones for street networks.
 
-**Isolines** is a Python library for creating street networks isochrones (equal-time) polygons with just one line of code. It is built on top of Shapely,
-geopandas and mosaic.
+**Isolines** is a Python library written in spark which runs seamlessly in a databricks platform for creating street networks isochrones (equal-time) polygons with just one line of code. It is built on top of Shapely, geopandas and mosaic.
 
 **Isolines** allows you to create isolines:
 from OSM data **use your own data**: your own network and source locations
