@@ -8,15 +8,15 @@ This immediately led us to start thinking how we could add the ability to create
 
 **OSRM-Isochrones** for Databricks is a PySpark library for creating geometric polygons that represent the areas that can be reached within a specified amount of time from a given starting point, using a particular mode of transportation and a set of travel conditions. It is built on top of several libraries and more importantly integrated to take advantage of Databricks Mosaic functions 
 
-Current supported modes of transport are Walking, Car, Cycle by the following what parameters?? 
+Current supported modes of transport are Walking, Car, Cycle by the following below parameters
 
 ## TABLE  
 
-|  | profile  | value  |
-| ------- | --- | --- |
-| 0 | Car | driving |
-| 1 | Cycle | cycle |
-| 2 | Walk   | walking |
+|Supported Profile  | Value  |
+| --- | --- |
+| Car | driving |
+| Cycle | cycle |
+| Walk   | walking |
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
 
