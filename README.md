@@ -2,7 +2,7 @@
 
 ## The OSRM is one of the best routing engines contributions to the OpenStreetMap community.
 
-Over the years whenever we needed to create isochrones for various geospatial use case, we had to rely on other projects that would differ in the output what is reachable compared to OSRM. Then Databricks released Mosaic and 
+Over the years whenever we needed to create isochrones for various geospatial use case, we had to rely on other projects that would differ in the output what is reachable compared to OSRM. Then Databricks released [Mosaic] (https://www.databricks.com/blog/2022/05/02/high-scale-geospatial-processing-with-mosaic.html) and 
 [how to set-up/deploy OSRM backend sever refer the link](https://www.databricks.com/solutions/accelerators/scalable-route-generation). 
 This immediately led us to start thinking how we could add the ability to create isochrones directly using OSRM engine so the community can take more advantage of a scalable data analytics infrastructure like Databricks.
 
