@@ -14,7 +14,7 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 |Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
 |--------------   |-----------------------|------------|-------------------------------|
 |Mode_of_Transport|	Mode of transport	|Yes	|driving-car, foot-walking,  cycling-regular|
-|Type_of_Journey|	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
+|Direction|	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
 |Travel_Catchment|	Isoline range value. For an isochrone time in minutes|	Yes|	Travel duration in minutes
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
