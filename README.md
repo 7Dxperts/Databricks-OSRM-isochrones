@@ -12,7 +12,7 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 
 ## TABLE  
 
-|Supported Profile  | Value  |
+|Supported Profile  | Expected Value  |
 | --- | --- |
 | Car | driving |
 | Cycle | cycle |
