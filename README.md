@@ -12,11 +12,11 @@ Current supported modes of transport are Walking, Car, Cycle by the following wh
 
 ## TABLE  
 
-|  | geometry  | time  |
+|  | profile  | value  |
 | ------- | --- | --- |
-| 0 | POLYGON ((-73.9715 40.6492,... | 3 |
-| 1 | POLYGON ((-73.9708 40.6470,... | 6 |
-| 2 | POLYGON ((-73.9704 40.6448...  | 9 |
+| 0 | Car | driving |
+| 1 | Cycle | cycle |
+| 2 | Walk   | walking |
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
 
