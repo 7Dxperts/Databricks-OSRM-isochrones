@@ -6,7 +6,7 @@ Over the years whenever we needed to create isochrones for various geospatial us
 [how to set-up/deploy OSRM backend sever](https://www.databricks.com/solutions/accelerators/scalable-route-generation). 
 This immediately led us to start thinking how we could add the ability to create isochrones directly using OSRM engine so the community can take more advantage of a scalable data analytics infrastructure like Databricks.
 
-**OSRM-Isochrones** for Databricks is a PySpark library for creating geometric polygons that represent the areas that can be reached within a specified amount of time from a given starting point, using a particular mode of transportation and a set of travel conditions. It is built on top of several libraries and more importantly integrated to take advantage of Databricks Mosaic functions such as st_makepolygon,st_geomfromwkt,st_aswkt,st_intersects,st_astext,st_transform,st_buffer,st_point,st_buffer,st_unaryunion
+**OSRM-Isochrones** for Databricks is a PySpark library for creating geometric polygons that represent the areas that can be reached within a specified amount of time from a given starting point, using a particular mode of transportation and a set of travel conditions. It is built on top of several libraries and more importantly integrated to take advantage of Databricks Mosaic functions such as **st_makepolygon,st_geomfromwkt,st_aswkt,st_intersects,st_astext,st_transform,st_buffer,st_point,st_buffer,st_unaryunion
 
 Current supported modes of transport are Walking, Car, Cycle by the following below parameters
 
