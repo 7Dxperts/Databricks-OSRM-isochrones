@@ -13,13 +13,11 @@ TABLE
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
 
 ## Main Features
-   * Generation of Isochroones for a given point location
-   * Source location should be provided with the valid coordinates
+   * Generate isochrones from a point of location with valid coordinates for a certain duration by mode of transport and direction [arrival/departure]
  
   #### Other Features
-  * Generation of isochrones using osrm server which is deployed local  / databricks.
-  * Extract the data and store in the table.
-  * Extraction of the augmented output graph
+  * Setup guide how to install OSRM Table API on Databricks 
+  
   
 
 ## Examples
