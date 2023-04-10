@@ -11,12 +11,10 @@ This immediately led us to start thinking how we could add the ability to create
 Current supported modes of transport are Walking, Car, Cycle by the following below parameters
 
 ## TABLE  
-
-|Supported Profile  | Expected Value  |
-| --- | --- |
-| Car | driving |
-| Cycle | cycle |
-| Walk   | walking |
+|Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
+|Mode_of_Transport|	Mode of transport	|Yes	|driving-car, foot-walking, public-transport, driving-hgv, cycling-regular|
+|Type_of_Journey|	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
+Travel_Catchment|	Isoline range value. For an isochrone time in minutes, for an isodistance distance in kilometers / miles|	Yes|	If Type_of_Journey_Measurement = time Expected Value is Minimum 5 and Maximum 90 Minutes (Default 5 Mins)|
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
 
