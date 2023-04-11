@@ -10,7 +10,7 @@ This immediately led us to start thinking how we could add the ability to create
 
 Current supported modes of transport are Walking, Car, Cycle by the following below parameters
 
-## Requireed Parameters 
+## Required Parameters 
 |Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
 |--------------   |-----------------------|------------|-------------------------------|
 |Mode_of_Transport|	Mode of transport	|Yes	|driving-car, foot-walking,  cycling-regular|
