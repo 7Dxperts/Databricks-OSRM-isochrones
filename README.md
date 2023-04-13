@@ -13,9 +13,9 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 ## Required Parameters 
 |Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
 |--------------   |-----------------------|------------|-------------------------------|
-|Mode_of_Transport|	Mode of transport	|Yes	|driving-car, foot-walking,  cycling-regular|
-|Direction|	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
-|Travel_Catchment|	Isoline range value. For an isochrone time in minutes|	Yes|	Travel duration in minutes|
+|mode|	Mode of transport	|Yes	|driving-car, foot-walking,  cycling-regular|
+|direction|	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
+|duration|	Isoline range value. For an isochrone time in minutes|	Yes|	Travel duration in minutes|
 |latitude|	latitude of the source / destination based on the direction |	Yes|	53.215|
 |longitude|	longitude of the source / destination based on the direction |	Yes|	-0.2151|
 
