@@ -1,4 +1,4 @@
-# OSRM-Isochrones [Databricks only] <img src="https://files.training.databricks.com/images/databricks-logo.png" width=30px>
+# <img src="https://files.training.databricks.com/images/databricks-logo.png" width=40px> OSRM-Isochrones [Databricks only] 
 
 **The OSRM is one of the best routing engines contributions to the OpenStreetMap community.**
 
