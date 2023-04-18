@@ -33,7 +33,22 @@ Note: We are planning to release a non-Databricks version of the library that ma
       - OSRM Back end server is deployed on the running cluster
       - Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
       - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the required street network data from **(http://7dxperts.com/data)** 
-      
+      - Run the below code to extract the Host IP of the deployed OSRM servers, note there will more than one when deployed in multi node cluster.
+     ```
+     import requests
+      import subprocess
+      myRDD = sc.parallelize(range(sc.defaultParallelism))
+      ip_addresses = set( 
+                          sc.runJob(
+                                    myRDD, 
+                                    lambda _: [subprocess.run(['hostname','-I'], capture_output=True).stdout.decode('utf-8').strip()] # run hostname -I on each executor
+                                    )
+                         )
+       print(ip_addresses)
+     ```
+      - Test the routing service is working as by running the same code below
+     ### Steps to follow:
+      -  
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
   
