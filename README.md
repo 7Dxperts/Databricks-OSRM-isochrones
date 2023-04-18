@@ -29,7 +29,8 @@ Note: We are planning to release a non-Databricks version of the library that ma
   #### Other Features
   * Setup guide how to install OSRM Table API on Databricks .
     # Instructions for enabling the OSRM Table service: -
-    * To use the OSRM table service, the OSRM server must be deployed on the Databricks Cluster. An .init script must be created and that deploys the OSRM server on the Databricks Cluster. When deploying the OSRM server on the cluster, make sure that the relavant PBF file extracting the OSM data it must be for the specific profile type(walk, drive, cycle) that you are trying to run isochrones.
+    *   Pre-requisites -
+    
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
   
