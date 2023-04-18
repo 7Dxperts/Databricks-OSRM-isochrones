@@ -95,8 +95,8 @@ Note: We are planning to release a non-Databricks version of the library that ma
 ```
 
 ![](docs/pics/Isochrones_London.png)
-```
+
 ![](docs/pics/Isochrones_Sanfransisco.png)
-* The output isolines/isochroones are based on a **
+```
 
 
