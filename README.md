@@ -29,10 +29,10 @@ Note: We are planning to release a non-Databricks version of the library that ma
   #### Other Features
   * Setup guide how to install OSRM Table API on Databricks .
     # Instructions for enabling the OSRM Table service: -
-     ### PREREQUISITES
+     ### Prerequisites
       - OSRM Back end server is deployed on the running cluster
       - Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
-      - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the required street network data from (http://7dxperts.com/data) 
+      - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the required street network data from **(http://7dxperts.com/data)** 
       
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
