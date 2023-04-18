@@ -25,6 +25,8 @@ Note: We are planning to release a non-Databricks version of the library that ma
 
 ## Main Features
    * Generate isochrones from a point of location with valid coordinates for a certain duration by mode of transport and direction [arrival/departure]
+   * Nodes and edges data stored in the delta tables which can be consumes and processed for other data analysis purposed.
+   * Data for each way points with in isochrones are stored in a delta table along with travel time
  
   #### Other Features
   * Setup guide how to install OSRM Table API on Databricks .
