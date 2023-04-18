@@ -31,8 +31,8 @@ Note: We are planning to release a non-Databricks version of the library that ma
     # Instructions for enabling the OSRM Table service: -
      ### PREREQUISITES
       - OSRM Back end server is deployed on the running cluster
-      - Init script is attached to the running cluster
-      - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script
+      - Init script is attached to the running cluster (follow the create init script for how to setup https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
+      - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script 
 
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
