@@ -29,15 +29,15 @@ Note: We are planning to release a non-Databricks version of the library that ma
    * The traversed data for all reachable locations from the origin (routes) is also stored in Delta table with duration in minutes.
  
   #### Prerequisites 
-  Databricks has provided a comprehensive guide how to deploy OSRM back end server (https://www.databricks.com/solutions/accelerators/scalable-route-generation) but it doesnt include how to enable the table API required for this project.
+  Databricks has provided a comprehensive guide how to deploy OSRM back end server (https://www.databricks.com/solutions/accelerators/scalable-route-generation) but it doesnt include how to enable the table API required for this project. Therefore we have provided instruction below how to accomplish this
   
   Setup guide how to install OSRM Table API on Databricks
   
-   ### Instructions for enabling the OSRM Table service: -
+   ### Instructions for enabling the OSRM Table service: 
 
-    - OSRM Back end server is already deployed on the running cluster.
-    - A Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
-    - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the processed street network data based on required profile from **(https://7dxperts.com/network-data-landing)** 
+   * OSRM Back end server is already deployed on the running cluster.
+   * A Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
+   * Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the processed street network data based on required profile from **(https://7dxperts.com/network-data-landing)** 
 
    ### Follow the below steps to test and enable table API on your OSRM setup:
     - Run the below code to extract the Host IP of the deployed OSRM servers, note there will more than one when deployed in multi node cluster.
@@ -80,16 +80,13 @@ Note: We are planning to release a non-Databricks version of the library that ma
         Example: - http://10.191.0.96:5000/
 
 
-  * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
+  
   
   
 
 ## Examples
 
-
-
-
-*  Below is the example code for calling the isolines library
+*  Sample code for calling the Isochrones library
 ``` import eqolines eq
     latitude       = 51.531856
     longiude       = -0.106573
