@@ -8,10 +8,10 @@ This immediately led us to start thinking how we could add the ability to create
 
 **OSRM-Isochrones** for Databricks is a PySpark library for creating geometric polygons that represent the areas that can be reached within a specified amount of time from a given starting point, using a particular mode of transportation and a set of travel conditions. It is built on top of several libraries and more importantly integrated to take advantage of Databricks Mosaic functions such as **[st_makepolygon](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-makepolygon), [st_geomfromwkt](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-geomfromwkt),[st_aswkt](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-aswkt), [st_intersects](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-intersects), [st_astext](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-astext), [st_transform](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-transform), [st_buffer](https://databrickslabs.github.io/mosaic/api/spatial-functions.html#st-buffer), [st_point](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-point), [st_unaryunion](https://databrickslabs.github.io/mosaic/api/geometry-constructors.html#st-unaryunion)**
 
-Current supported modes of transport are Walking, Car, Cycle by the following below parameters
+Current supported modes of transport are Driving using car where as Walking and Cycling are provided as experimental using the following below parameters
 
 ## Required Parameters 
-|Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
+|Variable Names   |	Description           |	Mandatory (Yes/No)     |	Possible Values            |
 |--------------   |-----------------------|------------|-------------------------------|
 |latitude         |	latitude of the source / destination based on the direction |	Yes|	53.215|
 |longitude        |	longitude of the source / destination based on the direction |	Yes|	-0.2151|
@@ -21,19 +21,22 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 |osrm_url        |	hostname of the osrm server either deployed within databricks |	Yes|	http://xx.xxx.x.xxx:5000/  (http://ipaddress:portnumber)|
 
 
-Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
+Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community but to be confirmed. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases(link required).  
 
 ## Main Features
-   * Generate isochrones from a point of location with valid coordinates for a certain duration by mode of transport and direction [arrival/departure]
-   * Nodes and edges data stored in the delta tables which can be consumes and processed for other data analysis purposed.
-   * Data for each way points with in isochrones are stored in a delta table along with travel time
+   * Generate isochrones from a point of location with valid coordinates for a certain duration using a mode of transport and travel direction [arrival/departure]
+   * The resulting nodes and edges data (reachable street network) will automatically be stored in separate Delta tables. These data could be consumed for other data analysis purposed.
+   * The traversed data for all reachable locations from the origin (routes) is also stored in Delta table with duration in minutes.
  
-  #### Prerequisites
-  * Setup guide how to install OSRM Table API on Databricks .
+  #### Prerequisites 
+  Databricks has provided a comprehensive guide how to deploy OSRM back end server (https://www.databricks.com/solutions/accelerators/scalable-route-generation) but it doesnt include how to enable the table API required for this project.
+  
+  Setup guide how to install OSRM Table API on Databricks
+  
     # Instructions for enabling the OSRM Table service: -
 
-    - OSRM Back end server is deployed on the running cluster
-    - Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
+    - OSRM Back end server is already deployed on the running cluster.
+    - A Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
     - Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the processed street network data based on required profile from **(https://7dxperts.com/network-data-landing)** 
    ### Follow the below steps to test and enable table API on your OSRM setup:
 
