@@ -29,7 +29,7 @@ Note: We are planning to release a non-Databricks version of the library that ma
   #### Other Features
   * Setup guide how to install OSRM Table API on Databricks .
     # Instructions for enabling the OSRM Table service: -
-    *   Pre-requisites -
+      Pre-requisites -
     
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
