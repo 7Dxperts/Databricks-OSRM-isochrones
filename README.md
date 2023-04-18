@@ -13,11 +13,13 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 ## Required Parameters 
 |Variable Names   |	Description           |	MOSCOW     |	Possible Values            |
 |--------------   |-----------------------|------------|-------------------------------|
+|latitude         |	latitude of the source / destination based on the direction |	Yes|	53.215|
+|longitude        |	longitude of the source / destination based on the direction |	Yes|	-0.2151|
 |mode             |	Mode of transport	    |Yes	       |driving-car, foot-walking,  cycling-regular|
 |direction        |	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
 |duration         |	Isoline range value. For an isochrone time in minutes|	Yes|	Travel duration in minutes|
-|latitude         |	latitude of the source / destination based on the direction |	Yes|	53.215|
-|longitude        |	longitude of the source / destination based on the direction |	Yes|	-0.2151|
+|osrm_url        |	hostname of the osrm server either deployed within databricks |	Yes|	http://xx.xxx.x.xxx:5000/ (Format http://ipaddress:portnumber)|
+
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
 
@@ -25,7 +27,9 @@ Note: We are planning to release a non-Databricks version of the library that ma
    * Generate isochrones from a point of location with valid coordinates for a certain duration by mode of transport and direction [arrival/departure]
  
   #### Other Features
-  * Setup guide how to install OSRM Table API on Databricks 
+  * Setup guide how to install OSRM Table API on Databricks .
+    # Instructions for enabling the OSRM Table service: -
+  
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
   
   
