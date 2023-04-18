@@ -18,7 +18,7 @@ Current supported modes of transport are Walking, Car, Cycle by the following be
 |mode             |	Mode of transport	    |Yes	       |driving-car, foot-walking,  cycling-regular|
 |direction        |	Type of journey either arrival (to) or departure (from) the location|	Yes	|Arrival/departure (Default Value Departure)|
 |duration         |	Isoline range value. For an isochrone time in minutes|	Yes|	Travel duration in minutes|
-|osrm_url        |	hostname of the osrm server either deployed within databricks |	Yes|	http://xx.xxx.x.xxx:5000/ (Format http://ipaddress:portnumber)|
+|osrm_url        |	hostname of the osrm server either deployed within databricks |	Yes|	http://xx.xxx.x.xxx:5000/  (http://ipaddress:portnumber)|
 
 
 Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases.  
@@ -29,7 +29,7 @@ Note: We are planning to release a non-Databricks version of the library that ma
   #### Other Features
   * Setup guide how to install OSRM Table API on Databricks .
     # Instructions for enabling the OSRM Table service: -
-    * To use the OSRM table service, the OSRM server must be deployed on the Databricks Cluster. A .init script must be created that deploys the OSRM server on the     Databricks Cluster. When deploying the OSRM server on the cluster, make sure that the while extracting the OSM data it must be for the specific  profile type(walk, drive, cycle) that you are trying to run isochrones.
+    * To use the OSRM table service, the OSRM server must be deployed on the Databricks Cluster. An .init script must be created and that deploys the OSRM server on the Databricks Cluster. When deploying the OSRM server on the cluster, make sure that the relavant PBF file extracting the OSM data it must be for the specific profile type(walk, drive, cycle) that you are trying to run isochrones.
   
   * Extracted data for nodes and edges are available in databaricks as a delta tables which can be analysed for further usecases.
   
