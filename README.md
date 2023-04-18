@@ -81,18 +81,22 @@ Note: We are planning to release a non-Databricks version of the library that ma
 
 ## Examples
 
-![](docs/pics/Isochrones_London.png)
+
+
+
+*  Below is the example code for calling the isolines library
+``` import eqolines eq
+    latitude       = 51.531856
+    longiude       = -0.106573
+    mode           = 'driving-car'
+    durations       = 5
+    osrm_url       = "http://xx.xxx.xx.xxxx:5000/"
+    final_response = eq.generate_isochrone(latitude, longiude , mode , durations, osrm_url)
 ```
-(for basic examples see also link pynb file)
 
-*  explain
-
-```python
+![](docs/pics/Isochrones_London.png)
 ```
 ![](docs/pics/Isochrones_Sanfransisco.png)
 * The output isolines/isochroones are based on a **
 
-```python
-xxxx
-```
 
