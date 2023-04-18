@@ -21,7 +21,7 @@ Current supported modes of transport are Driving using car where as Walking and 
 |osrm_url        |	hostname of the osrm server either deployed within databricks |	Yes|	http://xx.xxx.x.xxx:5000/  (http://ipaddress:portnumber)|
 
 
-Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community but to be confirmed. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases(link required).  
+Note: We are planning to release a non-Databricks version of the library that may benefit the wider geospatial community but to be confirmed. IsoDistance is also on the roadmap. Please visit the roadmap to see future releases(https://github.com/7Dxperts/OSRM-isochrones/discussions/categories/updates-and-roadmaps).  
 
 ## Main Features
    * Generate isochrones from a point of location with valid coordinates for a certain duration using a mode of transport and travel direction [arrival/departure]
