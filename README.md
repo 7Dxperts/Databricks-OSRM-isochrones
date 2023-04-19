@@ -40,8 +40,8 @@ Note: We are planning to release a non-Databricks version of the library that ma
    * Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the processed street network data based on required profile from **(https://7dxperts.com/network-data-landing)** 
 
    ### Follow the below steps to test and enable table API on your OSRM setup:
-    - Run the below code to extract the Host IP of the deployed OSRM servers, note there will more than one when deployed in multi node cluster.
-     ```
+   Run the below code to extract the Host IP of the deployed OSRM servers, note there will more than one when deployed in multi node cluster.
+   ```
       import requests
       import subprocess
       myRDD = sc.parallelize(range(sc.defaultParallelism))
@@ -52,9 +52,9 @@ Note: We are planning to release a non-Databricks version of the library that ma
                                     )
                          )
        print(ip_addresses)
-     ```
-      - Run the below sample code to test if the OSRM routing API is working as expected. 
-      ```
+   ```
+   Run the below sample code to test if the OSRM routing API is working as expected. 
+   ```
         responses = []
 
         # for each worker ip address
@@ -68,17 +68,45 @@ Note: We are planning to release a non-Databricks version of the library that ma
         display(
           pd.DataFrame(responses, columns=['ip','response'])
           )
-      ```
+   ```
+   Once you find routing service is working without any error, now let’s trial table service in OSRM, we use the above IP address that is been used for routing and by giving source and multiple target locations in databricks notebook. 
+   First, we need to import the necessary libraries and packages:
+   
+   ```
+    import json
+    import requests
+   ```
+   Then, we define the source and target locations:
+   
+   ```
+    source = '52.503033,13.424086'
+    targets = ['52.507033,13.425884', '52.508033,13.426884', '52.509033,13.427884']
+   ```
+   Next, we create the API call for the OSRM table service with the source and targets:
+   
+   ```
+    url = 'http://{}:5000/table/v1/driving/{}'.format(IP, source)
+    params = {
+        'destinations': ';'.join(targets)
+    }
+   ```
+   Then, we make the request to the API and get the response:
+   ```
+    response = requests.get(url, params=params)
+   ```
+   Finally, we can parse the response and extract the data:
+   ```
+    data = json.loads(response.text)
+    durations = data['durations']
+   ```
 
-      -  Once you find routing service is working without any error, now let’s enable the table service on the OSRM server and trail it out. To enable the table service, we must provide the ‘table’ as the service in the API call that invokes the OSRM server. The format of the API call is as follows:
-         http://{ip_address}:5000/table/version/{profile}/source_longitude,source_latitude;target_longitude1,target_latitude1;target_longitude2,target_latitude2
+   The durations will contain the duration (in seconds) of the journey from the source to the target locations.
 
-         To trial this service, we use the same IP address that is been used for routing and by giving source and multiple target locations. The maximum target location OSRM table service can take up to is 100 locations. Below is the code snippet of one source to three target locations is shown with the output.
-       -  Once the table service is working without any errors. Now, pass the HTTPS link as osrm_link to the isochrone function. Example and the syntax of how the link is to be sent as a parameter to osrm_link for function isochrones are as follows: -
-
+   Once the table service is working without any errors. Now, pass the HTTPS link as osrm_link to the isochrone function. Example and the syntax of how the link is to be sent as a parameter to osrm_link for function isochrones are as follows: -
+   ```
         Syntax: - http://ip_address:port_number/
         Example: - http://10.191.0.96:5000/
-
+   ```
 
   
   
