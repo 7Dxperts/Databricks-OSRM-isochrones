@@ -124,9 +124,9 @@ Note: We are planning to release a non-Databricks version of the library that ma
     final_response = eq.generate_isochrone(latitude, longiude , mode , durations, osrm_url)
 ```
 
-![](docs/pics/Isochrones_London.png)
+![](isolines/examples/Isochrones_London.png)
 
-![](docs/pics/Isochrones_Sanfransisco.png)
+![](isolines/examples/Isochrones_Sanfransisco.png)
 ```
 
 
