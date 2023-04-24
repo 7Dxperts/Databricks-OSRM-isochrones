@@ -127,8 +127,6 @@ Note: We are planning to release a non-Databricks version of the library that ma
 ![](isolines/examples/Isochrones_London.png)
 
 ![](isolines/examples/Isochrones_Sanfransisco.png)
-```
-
 Known Issues:
 OSRM (Open Source Routing Machine) is an open-source software package used for route planning and navigation. When using OSRM, one potential issue that can arise is a timeout error. This error occurs when the OSRM server takes too long to respond to a request from a client.
 
