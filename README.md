@@ -38,10 +38,10 @@ Note: We are planning to release a non-Databricks version of the library that ma
    * OSRM Back end server is already deployed on the running cluster. While deploying OSRM back end server we are using contraction hierarchies
    To deploy the OSRM server with the contraction hierarchies algorithm instead of multi-Dijkstra's algorithm, you can follow these steps:
 
-   - Install OSRM by following the instructions in the documentation for your operating system.
+     - Install OSRM by following the instructions in the documentation for your operating system.
 
-   - Instead of using the osrm-partition and osrm-customize commands to preprocess your data, use the osrm-contract command. This will preprocess your data using the contraction hierarchies algorithm.
-   
+     - Instead of using the osrm-partition and osrm-customize commands to preprocess your data, use the osrm-contract command. This will preprocess your data using the contraction hierarchies algorithm.
+
    * A Init script is attached to the running cluster (follow the create init script from the below link on how to setup init script https://notebooks.databricks.com/notebooks/RCG/Routing/index.html?_ga=2.172845923.1164585516.1677476401-1538949233.1672914660#Routing_2.html)
    * Required PBF files for each of the profiles are placed in the DBFS and has been defined in the init script. Download the processed street network data based on required profile from **(https://7dxperts.com/network-data-landing)** 
 
@@ -113,10 +113,6 @@ Note: We are planning to release a non-Databricks version of the library that ma
         Syntax: - http://ip_address:port_number/
         Example: - http://10.191.0.96:5000/
    ```
-
-  
-  
-  
 
 ## Examples
 
