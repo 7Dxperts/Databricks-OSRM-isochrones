@@ -132,4 +132,4 @@ Note: We are planning to release a non-Databricks version of the library that ma
 Known Issues:
 OSRM (Open Source Routing Machine) is an open-source software package used for route planning and navigation. When using OSRM, one potential issue that can arise is a timeout error. This error occurs when the OSRM server takes too long to respond to a request from a client.
 
-When OSRM times our please restart the OSRM server and rerun the isochrones again. Current we are trying to find the cause and a workaround for resolving timeout when generating isochrones with the OSRM server.
+If are experiencing timeout issues when generating isochrones with the OSRM server. One solution to this problem is to restart the OSRM server and try generating the isochrones again while we are working to find the root cause of the issue.
